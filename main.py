@@ -4,7 +4,6 @@ import sys
 
 
 def main():
-    print(sys.argv)
     if len(sys.argv) < 2:
         print(f"Address not specified.")
         sys.exit()
