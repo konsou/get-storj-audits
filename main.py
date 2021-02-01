@@ -1,19 +1,27 @@
+#!/usr/bin/python3
 import requests
-
-ADDRESS = "192.168.42.3:14000"
+import sys
 
 
 def main():
-    print(f"AUDIT STATS FOR {ADDRESS}")
+    print(sys.argv)
+    if len(sys.argv) < 2:
+        print(f"Address not specified.")
+        sys.exit()
 
-    response = requests.get(f"http://{ADDRESS}/api/sno")
+    address = sys.argv[1]
+
+    print(f"AUDIT STATS FOR {address}")
+
+    response = requests.get(f"http://{address}/api/sno")
     satellites = response.json()['satellites']
 
     for satellite in satellites:
-        response = requests.get(f"http://{ADDRESS}/api/sno/satellite/{satellite['id']}")
+        response = requests.get(f"http://{address}/api/sno/satellite/{satellite['id']}")
         response_parsed = response.json()
 
-        print(f"{satellite['url']}: Audits {response_parsed['audit']['successCount']} / {response_parsed['audit']['totalCount']} (success / total) ")
+        print(f"{satellite['url']}: Audits {response_parsed['audit']['successCount']} /"
+              f"{response_parsed['audit']['totalCount']} (success / total) ")
 
 
 if __name__ == '__main__':
