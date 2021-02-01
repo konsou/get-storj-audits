@@ -27,9 +27,6 @@ def main():
         table.add_row([satellite['url'], response_parsed['audit']['successCount'],
                        response_parsed['audit']['totalCount']])
 
-        # print(f"{satellite['url']}: Audits {response_parsed['audit']['successCount']} / "
-        #       f"{response_parsed['audit']['totalCount']} (success / total) ")
-
     table.align["Satellite"] = 'l'
     table.align["Succesful audits"] = 'r'
     table.align["Total audits"] = 'r'
