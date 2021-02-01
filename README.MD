@@ -3,7 +3,7 @@
 
 Requires Python 3.7 or newer
 
-Setup:
+Setup:  
 ```sudo apt update```  
 ```sudo apt install python3.7 python3-pip```  
 ```git clone https://github.com/konsou/get-storj-audits```  
