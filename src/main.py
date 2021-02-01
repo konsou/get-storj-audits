@@ -19,7 +19,7 @@ def main():
         response = requests.get(f"http://{address}/api/sno/satellite/{satellite['id']}")
         response_parsed = response.json()
 
-        print(f"{satellite['url']}: Audits {response_parsed['audit']['successCount']} /"
+        print(f"{satellite['url']}: Audits {response_parsed['audit']['successCount']} / "
               f"{response_parsed['audit']['totalCount']} (success / total) ")
 
 
