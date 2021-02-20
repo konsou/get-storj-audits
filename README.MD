@@ -1,5 +1,6 @@
 # Get Storj Audits
 ## A Python script for checking your audits
+## NOTE: This script is currently broken because of changes to dashboard API. Will update when I have the time.
 
 Requires Python 3.7 or newer
 
